@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<meta name="color-scheme" content="light dark"/>
+<meta name="description" content="Free demo concept website for Green Future Properties, a real estate agency at Commercial Broadway, DHA Phase 8, Lahore."/>
+<link rel="icon" href="data:,"/>
+<title>Green Future Properties - Demo Website</title>
+
+<style>
+:root{
+  --bg:#f5faf5; --surface:#ffffff; --surface2:#e9f4e9; --ink:#1c3320; --muted:#52664f;
+  --brand:#1e7a34; --branddark:#155c26; --brandsoft:#d9eedd; --line:#d2e4d3;
+  --shadow:0 18px 45px rgba(15,40,32,.10); --shadow-sm:0 8px 22px rgba(15,40,32,.07);
+}
+</style>
+
+
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{margin:0;min-width:320px;background:#f5faf5;color:#1c3320;
+  font-family:"DM Sans","Segoe UI",system-ui,-apple-system,sans-serif;
+  font-size:16px;line-height:1.65;text-rendering:optimizeLegibility}
+body.menu-open{overflow:hidden}
+button,input,select,textarea{font:inherit}
+a{color:inherit}
+h1,h2,h3{font-family:"Manrope","Segoe UI",system-ui,sans-serif;line-height:1.2;margin:0 0 .6em}
+h1{font-size:clamp(2rem,5vw,3.4rem);font-weight:800;letter-spacing:-.01em}
+h2{font-size:clamp(1.5rem,3.4vw,2.2rem);font-weight:800;letter-spacing:-.01em}
+h3{font-size:1.15rem;font-weight:700}
+p{margin:0 0 1em}
+.container{width:min(1160px,calc(100% - 40px));margin-inline:auto}
+.section{padding:72px 0}
+.section-alt{background:#e9f4e9}
+.kicker{display:inline-block;font-weight:700;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;
+  color:#1e7a34;background:#d9eedd;border-radius:999px;padding:6px 16px;margin-bottom:14px}
+.demo-strip{background:#102a22;color:#eafff5;text-align:center;font-weight:600;font-size:.82rem;
+  letter-spacing:.02em;padding:8px 20px;position:relative;z-index:60}
+.skip{position:fixed;z-index:200;top:10px;left:10px;padding:10px 14px;background:#ffffff;color:#1c3320;
+  border-radius:8px;transform:translateY(-200%)}
+.skip:focus{transform:none}
+header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);border-bottom:1px solid #d2e4d3;
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.nav-wrap{min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:inline-flex;align-items:center;gap:11px;text-decoration:none;font-weight:800;font-size:1.08rem}
+.brand-mark{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,#1e7a34,#155c26);
+  display:grid;place-items:center;color:#fff;font-size:1.25rem;flex:none;box-shadow:0 8px 22px rgba(15,40,32,.07)}
+.nav-links{display:flex;align-items:center;gap:2px}
+.nav-links a{padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600;font-size:.95rem;color:#52664f}
+.nav-links a:hover{color:#1e7a34;background:#d9eedd}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:0;cursor:pointer;
+  font-weight:700;text-decoration:none;border-radius:14px;padding:14px 26px;font-size:1rem;
+  transition:transform .15s ease,box-shadow .15s ease;box-shadow:0 8px 22px rgba(15,40,32,.07)}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:linear-gradient(135deg,#1e7a34,#155c26);color:#fff}
+.btn-ghost{background:#ffffff;color:#1c3320;border:1.5px solid #d2e4d3;box-shadow:none}
+.btn-light{background:#fff;color:#155c26}
+.btn-wa{background:#1faa53;color:#fff}
+.nav-cta{margin-left:10px}
+.menu-btn{display:none;background:none;border:1.5px solid #d2e4d3;border-radius:10px;padding:9px 12px;cursor:pointer;color:#1c3320}
+.hero{position:relative;overflow:hidden;padding:96px 0 88px;background:
+  radial-gradient(1100px 480px at 85% -10%,#d9eedd 0%,transparent 60%),
+  radial-gradient(800px 420px at -10% 110%,#d9eedd 0%,transparent 55%),#f5faf5}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.hero p.lead{font-size:1.15rem;color:#52664f;max-width:34rem}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
+.hero-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.pill{background:#ffffff;border:1px solid #d2e4d3;border-radius:999px;padding:8px 16px;font-size:.88rem;
+  font-weight:600;color:#52664f;display:inline-flex;align-items:center;gap:8px}
+.hero-art{position:relative;min-height:340px}
+.blob{position:absolute;border-radius:38% 62% 55% 45%/48% 42% 58% 52%;filter:saturate(1.1)}
+.blob-a{inset:6% 8% 12% 12%;background:linear-gradient(135deg,#1e7a34,#155c26);opacity:.92;box-shadow:0 18px 45px rgba(15,40,32,.10)}
+.blob-b{inset:0 0 0 0;background:linear-gradient(135deg,#d9eedd,#d9eedd);opacity:.5;transform:scale(1.12)}
+.hero-card{position:absolute;background:#ffffff;border:1px solid #d2e4d3;border-radius:20px;box-shadow:0 18px 45px rgba(15,40,32,.10);
+  padding:18px 20px;max-width:250px}
+.hero-card h4{margin:0 0 6px;font-size:.95rem}
+.hero-card p{margin:0;font-size:.85rem;color:#52664f}
+.hc1{top:6%;left:0;animation:float 7s ease-in-out infinite}
+.hc2{bottom:8%;right:2%;animation:float 8.5s ease-in-out infinite reverse}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.grid-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:#ffffff;border:1px solid #d2e4d3;border-radius:22px;padding:28px;box-shadow:0 8px 22px rgba(15,40,32,.07);
+  transition:transform .18s ease,box-shadow .18s ease}
+.card:hover{transform:translateY(-5px);box-shadow:0 18px 45px rgba(15,40,32,.10)}
+.card .ico{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;font-size:1.6rem;
+  background:#d9eedd;margin-bottom:16px}
+.card h3{margin-bottom:8px}
+.card p{color:#52664f;font-size:.95rem;margin-bottom:0}
+.note{font-size:.82rem;color:#52664f}
+.timings{width:100%;border-collapse:collapse;background:#ffffff;border:1px solid #d2e4d3;border-radius:18px;
+  overflow:hidden;box-shadow:0 8px 22px rgba(15,40,32,.07)}
+.timings th,.timings td{padding:15px 20px;text-align:left}
+.timings thead th{background:#d9eedd;color:#155c26;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase}
+.timings tbody tr+tr td{border-top:1px solid #d2e4d3}
+.timings td:last-child,.timings th:last-child{text-align:right}
+.today{background:linear-gradient(135deg,#1e7a34,#155c26);color:#fff;font-weight:700;border-radius:8px;
+  padding:2px 10px;font-size:.75rem;margin-left:8px}
+.cta-band{background:linear-gradient(135deg,#1e7a34,#155c26);color:#fff;border-radius:28px;padding:56px;
+  text-align:center;box-shadow:0 18px 45px rgba(15,40,32,.10);position:relative;overflow:hidden}
+.cta-band::before{content:"";position:absolute;inset:-40%;background:
+  radial-gradient(circle at 70% 20%,rgba(255,255,255,.14),transparent 45%)}
+.cta-band h2{color:#fff}
+.cta-band p{color:rgba(255,255,255,.88);max-width:36rem;margin:0 auto 28px}
+.cta-band .hero-cta{justify-content:center}
+.form-card{background:#ffffff;border:1px solid #d2e4d3;border-radius:24px;box-shadow:0 18px 45px rgba(15,40,32,.10);padding:36px;max-width:640px;margin:0 auto}
+.field{margin-bottom:16px}
+.field label{display:block;font-weight:600;font-size:.9rem;margin-bottom:6px}
+.field input,.field select,.field textarea{width:100%;border:1.5px solid #d2e4d3;border-radius:12px;
+  padding:12px 14px;background:#f5faf5;color:#1c3320}
+.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid #1e7a34;border-color:#1e7a34}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-ok{display:none;background:#d9eedd;border:1.5px solid #1e7a34;color:#155c26;border-radius:14px;
+  padding:16px 18px;font-weight:600;margin-top:18px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.contact-list{list-style:none;margin:0 0 24px;padding:0;display:grid;gap:14px}
+.contact-list li{display:flex;gap:14px;align-items:flex-start;background:#ffffff;border:1px solid #d2e4d3;
+  border-radius:16px;padding:16px 18px}
+.contact-list .ci{font-size:1.35rem;line-height:1.2}
+.contact-list b{display:block}
+.contact-list small{color:#52664f}
+.area-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.area{background:#ffffff;border:1px solid #d2e4d3;border-radius:20px;overflow:hidden;box-shadow:0 8px 22px rgba(15,40,32,.07);
+  transition:transform .18s ease}
+.area:hover{transform:translateY(-5px)}
+.area .art{height:120px;background:linear-gradient(135deg,#1e7a34,#155c26);display:grid;place-items:center;
+  font-size:2.6rem;color:rgba(255,255,255,.9)}
+.area .txt{padding:18px 20px}
+.area .txt h3{margin-bottom:4px;font-size:1.05rem}
+.area .txt p{margin:0;color:#52664f;font-size:.9rem}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:step}
+.step{background:#ffffff;border:1px solid #d2e4d3;border-radius:22px;padding:28px;position:relative;box-shadow:0 8px 22px rgba(15,40,32,.07)}
+.step::before{counter-increment:step;content:counter(step);position:absolute;top:-18px;left:24px;width:38px;height:38px;
+  border-radius:50%;background:linear-gradient(135deg,#1e7a34,#155c26);color:#fff;font-weight:800;display:grid;place-items:center}
+footer{border-top:1px solid #d2e4d3;background:#e9f4e9;padding:48px 0 32px;margin-top:40px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px;margin-bottom:32px}
+.foot-grid h4{margin:0 0 12px;font-size:.95rem}
+.foot-grid ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;color:#52664f;font-size:.92rem}
+.foot-grid a{text-decoration:none}
+.foot-grid a:hover{color:#1e7a34}
+.foot-bottom{border-top:1px solid #d2e4d3;padding-top:22px;display:flex;flex-wrap:wrap;gap:12px;
+  justify-content:space-between;align-items:center;font-size:.85rem;color:#52664f}
+.demo-notice{background:#fff7e8;border:1.5px dashed #c98a2b;color:#7a4e16;border-radius:16px;
+  padding:18px 22px;font-size:.9rem;margin-bottom:28px}
+.wa-float{position:fixed;right:20px;bottom:20px;z-index:60;width:60px;height:60px;border-radius:50%;
+  background:#1faa53;color:#fff;display:grid;place-items:center;font-size:1.7rem;text-decoration:none;
+  box-shadow:0 12px 30px rgba(20,120,60,.4);transition:transform .15s}
+.wa-float:hover{transform:scale(1.08)}
+.maplink{color:#1e7a34;font-weight:700}
+@media (max-width:900px){
+  .hero-grid,.two-col{grid-template-columns:1fr}
+  .grid-cards,.steps,.area-grid{grid-template-columns:1fr 1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .hero-art{min-height:300px}
+}
+@media (max-width:620px){
+  .grid-cards,.steps,.area-grid,.form-row,.foot-grid{grid-template-columns:1fr}
+  .nav-links{position:fixed;inset:0;background:#f5faf5;flex-direction:column;justify-content:center;gap:6px;
+    transform:translateX(100%);transition:transform .25s ease;z-index:55}
+  body.menu-open .nav-links{transform:none}
+  .nav-links a{font-size:1.25rem;padding:14px}
+  .nav-cta{margin:12px 0 0}
+  .menu-btn{display:inline-block;z-index:56}
+  .section{padding:52px 0}
+  .cta-band{padding:40px 24px}
+  .hero{padding:64px 0 56px}
+}
+</style>
+
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="demo-strip" role="note">Free demo concept website. Not the official site of Green Future Properties. Details are illustrative only.</div>
+<header class="site">
+  <div class="container nav-wrap">
+    <a class="brand" href="#home"><span class="brand-mark">🌱</span><span>Green Future Properties</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+    <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+      <a href="#home">Home</a><a href="#services">Services</a><a href="#areas">Areas</a><a href="#enquire">Enquire</a><a href="#contact">Contact</a>
+      <a class="btn btn-primary nav-cta" href="#enquire">Enquire Now</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero" id="home"><div class="container hero-grid">
+<div>
+<span class="kicker">Green Future Properties</span>
+<h1>Invest in Lahore's tomorrow, today.</h1>
+<p class="lead">Green Future Properties guides buyers and investors toward smart property decisions in DHA and beyond, with a focus on long-term value and secure transactions.</p>
+<div class="hero-cta">
+<a class="btn btn-primary" href="#enquire">Enquire Now</a>
+<a class="btn btn-wa" href="https://wa.me/923000000000?text=Hello! I am interested in a property.">WhatsApp Us</a>
+</div>
+<div class="hero-badges"><span class="pill">📈 Investment Focus</span><span class="pill">🏠 Residential</span><span class="pill">🏢 Commercial</span><span class="pill">📍 DHA Phase 8, Lahore</span></div>
+</div>
+<div class="hero-art" aria-hidden="true">
+<div class="blob blob-b"></div><div class="blob blob-a"></div>
+<div class="hero-card hc1"><h4>📈</h4><p>Investment advisory focused on growth corridors and rental yield.</p></div>
+<div class="hero-card hc2"><h4>🔒</h4><p>Documented, transparent deals with verification at every step.</p></div>
+</div>
+</div></section>
+<section class="section" id="services"><div class="container">
+<span class="kicker">What We Do</span><h2>Property services, end to end.</h2>
+<p style="color:var(--muted);max-width:44rem">From your first site visit to the final registry, one team handles the whole journey.</p>
+<div class="steps" style="margin-top:34px">
+<div class="step"><h3>Residential Sales</h3><p style="color:var(--muted)">Houses, apartments, and plots matched to your budget and family needs.</p></div><div class="step"><h3>Commercial Property</h3><p style="color:var(--muted)">Shops, offices, and plazas in high-footfall commercial zones.</p></div><div class="step"><h3>Plots, Files & Investment</h3><p style="color:var(--muted)">Guidance on files and developing sectors for long-horizon investors.</p></div>
+</div>
+<p class="note" style="margin-top:18px">Services shown are typical for a real estate agency website demo, for illustration only.</p>
+</div></section>
+<section class="section section-alt" id="areas"><div class="container">
+<span class="kicker">Areas We Serve</span><h2>Deep knowledge of Lahore's property market.</h2>
+<p style="color:var(--muted);max-width:44rem">Familiar, high-demand localities where we help clients buy, sell, and rent.</p>
+<div class="area-grid" style="margin-top:28px"><div class="area"><div class="art">🌆</div><div class="txt"><h3>DHA Phase 8</h3><p>Our base: Broadway commercial and surrounding residential blocks.</p></div></div><div class="area"><div class="art">🏘️</div><div class="txt"><h3>DHA Phase 5</h3><p>Mature phase with strong rental demand and amenities.</p></div></div><div class="area"><div class="art">🌳</div><div class="txt"><h3>DHA Phase 6</h3><p>Premium residential pockets and commercial avenues.</p></div></div><div class="area"><div class="art">🏡</div><div class="txt"><h3>Bahria Town</h3><p>Affordable family housing with modern infrastructure.</p></div></div><div class="area"><div class="art">🏛️</div><div class="txt"><h3>Lahore Cantt</h3><p>Prestigious, secure localities with steady appreciation.</p></div></div><div class="area"><div class="art">🛍️</div><div class="txt"><h3>Gulberg</h3><p>Commercial heart of the city for shops and offices.</p></div></div></div>
+<p class="note" style="margin-top:18px">Area cards are illustrative examples for this demo concept.</p>
+</div></section>
+<section class="section section-alt" id="enquire"><div class="container">
+<span class="kicker">Enquire</span><h2 style="text-align:center">Tell us what you're looking for</h2>
+<p style="text-align:center;color:var(--muted);max-width:40rem;margin:0 auto 28px">Share your requirement and we will get back to you with suitable options. Or call <a href="tel:+923000000000" style="font-weight:700">+92 300 0000000</a> directly.</p>
+<div class="form-card">
+<form class="demo-form" action="#" method="post">
+<div class="form-row">
+<div class="field"><label for="en">Full name</label><input id="en" name="name" required placeholder="Your name"/></div>
+<div class="field"><label for="ep">Phone number</label><input id="ep" name="phone" type="tel" required placeholder="03xx xxxxxxx"/></div>
+</div>
+<div class="form-row">
+<div class="field"><label for="ei">I want to</label><select id="ei" name="intent"><option>Buy</option><option>Sell</option><option>Rent</option><option>Invest</option></select></div>
+<div class="field"><label for="et">Property type</label><select id="et" name="type"><option>House</option><option>Flat / Apartment</option><option>Plot</option><option>Commercial</option><option>File</option></select></div>
+</div>
+<div class="field"><label for="ea">Preferred area</label><input id="ea" name="area" placeholder="e.g. DHA Phase 5, Wapda Town"/></div>
+<div class="field"><label for="em">Details (optional)</label><textarea id="em" name="notes" rows="3" placeholder="Size, budget range, or anything else"></textarea></div>
+<button class="btn btn-primary" type="submit" style="width:100%">Send Enquiry</button>
+<div class="form-ok" role="status"></div>
+<p class="note" style="margin-top:14px;text-align:center">Demo form only. No data is sent anywhere.</p>
+</form></div></div></section>
+<section class="section"><div class="container">
+<div class="cta-band">
+<h2>Thinking of investing in DHA?</h2><p>Share your budget and goals. We will shortlist options that fit your plan and arrange visits.</p>
+<div class="hero-cta">
+<a class="btn btn-light" href="#enquire">Start Enquiring</a>
+<a class="btn btn-wa" href="https://wa.me/923000000000?text=Hello! I am interested in property investment options.">WhatsApp Us</a>
+</div></div></div></section>
+<section class="section" id="contact"><div class="container">
+<span class="kicker">Visit Us</span><h2>Get in touch</h2>
+<div class="two-col" style="margin-top:24px">
+<ul class="contact-list">
+<li><span class="ci">📍</span><div><b>Address</b><small>148 B, Commercial Broadway, DHA Phase 8, Lahore<br/><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=148+B,+Commercial+Broadway,+DHA+Phase+8,+Lahore" target="_blank" rel="noopener">View on Google Maps</a></small></div></li>
+<li><span class="ci">📞</span><div><b>Phone</b><small><a href="tel:+923000000000" style="font-weight:700">+92 300 0000000</a> (demo number)</small></div></li>
+<li><span class="ci">💬</span><div><b>WhatsApp</b><small><a href="https://wa.me/923000000000" style="font-weight:700">Chat with us</a> for quick questions</small></div></li>
+<li><span class="ci">🕘</span><div><b>Timings</b><small>See the timings section above for sample visiting hours</small></div></li>
+</ul>
+<div class="form-card">
+<h3 style="margin-top:0">Request a callback</h3>
+<p class="note">Leave your number and we will call you back.</p>
+<form class="demo-form" action="#" method="post">
+<div class="field"><label for="cn">Your name</label><input id="cn" name="name" required placeholder="Your name"/></div>
+<div class="field"><label for="cp">Phone number</label><input id="cp" name="phone" type="tel" required placeholder="03xx xxxxxxx"/></div>
+<button class="btn btn-primary" type="submit" style="width:100%">Request Callback</button>
+<div class="form-ok" role="status"></div>
+</form></div>
+</div></div></section>
+</main>
+<footer>
+  <div class="container">
+    <div class="demo-notice"><strong>Free demo concept.</strong> This page was created as a <em>free demo concept</em> to show what a website for <strong>Green Future Properties</strong> could look like. It is <strong>not</strong> the business's official website, and the contact details, services, and timings shown are illustrative demo content, not verified facts.</div>
+    <div class="foot-grid">
+      <div>
+        <h4>Green Future Properties</h4>
+        <ul>
+          <li>Property investment guidance in DHA, Lahore.</li>
+          <li>148 B, Commercial Broadway, DHA Phase 8, Lahore</li>
+          <li>Phone: <a href="tel:+923000000000">+92 300 0000000</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul><li><a href="#home">Home</a></li><li><a href="#services">Services</a></li><li><a href="#areas">Areas</a></li><li><a href="#enquire">Enquire</a></li><li><a href="#contact">Contact</a></li></ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+923000000000">Call +92 300 0000000</a></li>
+          <li><a href="https://wa.me/923000000000">WhatsApp us</a></li>
+          <li><a href="#enquire">Request a callback</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="yr"></span> Green Future Properties. Free demo concept website.</span>
+      <span>Made as a demo by a Lahore web designer.</span>
+    </div>
+  </div>
+</footer>
+<a class="wa-float" href="https://wa.me/923000000000" aria-label="Chat on WhatsApp">✆</a>
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+var btn=document.getElementById('menuBtn'),nav=document.getElementById('navLinks');
+btn.addEventListener('click',function(){var o=document.body.classList.toggle('menu-open');
+btn.setAttribute('aria-expanded',o);btn.setAttribute('aria-label',o?'Close menu':'Open menu');btn.textContent=o?'✕':'☰';});
+nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){
+document.body.classList.remove('menu-open');btn.textContent='☰';btn.setAttribute('aria-expanded','false');});});
+document.querySelectorAll('form.demo-form').forEach(function(f){
+f.addEventListener('submit',function(e){e.preventDefault();
+var ok=f.querySelector('.form-ok');if(ok){ok.style.display='block';ok.textContent=
+'Thank you! This is a demo form, so nothing was actually sent. In the live site this would reach Green Future Properties. Call +92 300 0000000 instead.';}
+f.reset();});});
+</script>
+</body>
+</html>
